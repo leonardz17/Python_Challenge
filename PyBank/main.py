@@ -39,12 +39,27 @@ with open (bank_csv, "r") as csvfile:
         total_profits = total_profits + profit
         avg_change = total_profit_change/total_months -1
 
+    print ("Financial Analysis")
+    print ("-" *64)
     print(f"Total Months: {total_months}")
     print(f"Net Total Profit: ${total_profits:0,.0f}")
-    print(f"Average Change: ${avg_change:0,.0f}")
-    print(f"Greatest Increase: {highest_month} ${highest_profits}")
-    print(f"Greatest Decrease: {lowest_month} ${lowest_profits}")
-    
-   
+    print(f"Average Change: ${avg_change:,.2f}")
+    print(f"Greatest Increase: {highest_month} ${highest_profits:,}")
+    print(f"Greatest Decrease: {lowest_month} ${lowest_profits:,}")
+
+output_file = os.path.join("Analysis", "bank_analysis.txt") 
+
+with open(output_file, 'w', newline='') as txtfile:
+    txtfile.write('Financial Analysis\n')
+    txtfile.write('-----------------------------------------\n')
+    txtfile.write(f'Total Months: {total_months}\n')
+    txtfile.write(f'Net Total Profit: ${total_profits:0,.0f}\n')
+    txtfile.write(f'Average Change: ${avg_change:0,.2f}\n')
+    txtfile.write(f'Greatest Increase: {highest_month} ${highest_profits:,}\n')
+    txtfile.write(f'Greatest Decrease: {lowest_month} ${lowest_profits:,}\n')
+
+
+
+
     
 
