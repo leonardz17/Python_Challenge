@@ -39,10 +39,10 @@ winner = candidates_list[most_votes_count]
            
 print("Election Results")
 print("---------------------------")    
-print(f"Total Votes: {total_votes}")
+print(f"Total Votes: {total_votes:0,}")
 print("---------------------------")
 for x in range(len(candidates_list)):
-    print (f"{candidates_list[x]}: {percentage(candidate_count[x]):.2f}% ({candidate_count[x]})")
+    print (f"{candidates_list[x]}: {percentage(candidate_count[x]):.2f}% ({candidate_count[x]:0,})")
 print("---------------------------")
 print(f"Winner: {winner}") 
 print("---------------------------")
@@ -53,10 +53,10 @@ output_file = os.path.join("Analysis", "poll_analysis.txt")
 with open(output_file, 'w', newline='') as txtfile:
     txtfile.write("Election Results\n")
     txtfile.write("---------------------------\n")
-    txtfile.write(f"Total Votes: {total_votes}\n")
+    txtfile.write(f"Total Votes: {total_votes:0,}\n")
     txtfile.write("---------------------------\n")
     for x in range(len(candidates_list)):
-        txtfile.write(f"{candidates_list[x]}: {percentage(candidate_count[x]):.2f}% ({candidate_count[x]})\n")
+        txtfile.write(f"{candidates_list[x]}: {percentage(candidate_count[x]):.2f}% ({candidate_count[x]:0,})\n")
     txtfile.write("-----------------------------\n")
     txtfile.write(f"Winner: {winner}\n")
     txtfile.write("-----------------------------\n")
